@@ -12,32 +12,35 @@ This is a Django-based web application that includes user authentication feature
 - Profile Management
 - Password Change
 
-## Requirements
-
-- Python 3.x
-- Django 3.x or higher
-
 ## Setup
 
 ### Clone the Repository
 
 ```bash
-git clone https://github.com/yourusername/yourproject.git
-cd yourproject
+git clone https://github.com/Rohit-Mangasule/Django_Assignment
+cd Django
+```
 
 ## Create a Virtual Environment
-python -m venv venv
-source venv/bin/activate  # On Windows use `venv\Scripts\activate`
+```
+python -m venv .env
+source .env/Scripts/activate
+```
 
-##Install Dependencies
-pip install -r requirements.txt
+## Install Django
+```
+pip install Django
+```
 
-
-##Apply Migrations
+## Apply Migrations
+```
 python manage.py migrate
+```
 
-##Run the Development Server
-Run the Development Server
+## Run the Development Server
+```
+python manage.py runserver
+```
 
 ## Usage
 
@@ -45,8 +48,13 @@ Access the Application
 Open your web browser and go to http://127.0.0.1:8000/.
 
 User Authentication
+
 Sign Up: Create a new account.
+
 Login: Log in with your credentials.
+
 Profile: View and manage your profile.
+
 Password Change: Change your password.
+
 Password Reset: Reset your password via email.
