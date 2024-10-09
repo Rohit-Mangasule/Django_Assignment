@@ -1,25 +1,52 @@
-# Initial Set Up
+# Django Project
+
+## Overview
+
+This is a Django-based web application that includes user authentication features such as sign-up, login, password reset, and profile management. The project is designed to be a starting point for building more complex web applications.
+
+## Features
+
+- User Registration
+- User Login
+- Password Reset
+- Profile Management
+- Password Change
+
+## Requirements
+
+- Python 3.x
+- Django 3.x or higher
+
+## Setup
+
+### Clone the Repository
+
+```bash
+git clone https://github.com/yourusername/yourproject.git
+cd yourproject
+
+## Create a Virtual Environment
+python -m venv venv
+source venv/bin/activate  # On Windows use `venv\Scripts\activate`
+
+##Install Dependencies
+pip install -r requirements.txt
 
 
-# The first step is to create a dedicated directory for our code
-
-```
-cd onedrive\desktop\
-mkdir Django
-cd Django
-```
-
-# Next, activate a new virtual environment called .venv.
-
-```
-python -m venv .venv
-.venv\Scripts\Activate.ps1
- python -m pip install django~=5.0
- ```
-
-# Then install Django, create a new Django project, and run migrate to initialize the new database, and execute runserver to start up the local web server provided by Django.
-```
-django-admin startproject django_project .
+##Apply Migrations
 python manage.py migrate
- python manage.py runserver
- ```
+
+##Run the Development Server
+Run the Development Server
+
+## Usage
+
+Access the Application
+Open your web browser and go to http://127.0.0.1:8000/.
+
+User Authentication
+Sign Up: Create a new account.
+Login: Log in with your credentials.
+Profile: View and manage your profile.
+Password Change: Change your password.
+Password Reset: Reset your password via email.
