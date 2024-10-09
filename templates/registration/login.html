@@ -1,0 +1,58 @@
+{% extends "base.html" %}
+
+{% block title %}Login{% endblock %}
+
+{% block content %}
+<style>
+  .login-container {
+    max-width: 400px;
+    margin: 0 auto;
+    padding: 20px;
+    text-align: center;
+    font-family: Arial, sans-serif;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  }
+  .login-container h2 {
+    margin-bottom: 20px;
+  }
+  .login-container form {
+    display: flex;
+    flex-direction: column;
+  }
+  .login-container button {
+    background-color: #4CAF50;
+    color: white;
+    padding: 10px;
+    margin: 10px 0;
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+  }
+  .login-container button:hover {
+    background-color: #45a049;
+  }
+  .login-container a {
+    color: #4CAF50;
+    text-decoration: none;
+    margin-top: 10px;
+  }
+  .login-container a:hover {
+    text-decoration: underline;
+  }
+</style>
+
+<div class="login-container">
+  <h2>Log In</h2>
+  <form method="post">
+    {% csrf_token %}
+    {{ form.as_p }}
+    <button type="submit">Log In</button>
+  </form>
+  <a href="{% url 'signup' %}">Don't gave an account?Sign Up</a>
+  <br>
+  <br>
+  <a href="{% url 'password_reset' %}">Forgot Password?</a>
+</div>
+{% endblock %}

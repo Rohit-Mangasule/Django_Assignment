@@ -1,0 +1,48 @@
+{% extends "base.html" %}
+
+{% block title %}Home{% endblock %}
+
+{% block content %}
+<style>
+  .container {
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 20px;
+    text-align: center;
+    font-family: Arial, sans-serif;
+  }
+  .button {
+    background-color: #c1aa36;
+    color: white;
+    padding: 10px 20px;
+    margin: 10px 5px;
+    border: none;
+    cursor: pointer;
+    text-decoration: none;
+    display: inline-block;
+    border-radius: 5px;
+  }
+  .button:hover {
+    background-color: #4548a0;
+  }
+  .container p {
+    margin: 10px 0;
+  }
+</style>
+
+<div class="container">
+  {% if user.is_authenticated %}
+    <p class="container">Hi {{ user.username }}!</p>
+    <p>Authentication in Django is a way to verify the identity of a user. It ensures that users are who they claim to be and allows them to access certain parts of the application based on their permissions.</p>
+    <a href="{% url 'profile' %}" class="button">Profile</a>
+    <a href="{% url 'password_change' %}" class="button">Change Password</a>
+    <form action="{% url 'logout' %}" method="post">
+      {% csrf_token %}
+      <button type="submit" class="button">Log Out</button>
+    </form>
+  {% else %}
+    <p>You are not logged in</p>
+    <a href="{% url 'login' %}" class="button">Log In</a>
+  {% endif %}
+</div>
+{% endblock %}
